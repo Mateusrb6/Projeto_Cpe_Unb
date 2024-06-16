@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
- Agenda para armazenar nome, telefone e endereço
+ Agenda para armazenar nome, telefone e email
  deve ser possivel editar o conteudo
 
  Também deve ser possivel apagar e editar as entradas e a pesquisa de contatos por meio de qualquer uma de
