@@ -56,6 +56,7 @@ void menu_opcoes(int opcao){
             cout << "encerrando...";
             break;
         default:
+            cout << "opcao invalida";
             break;
     }
 }
