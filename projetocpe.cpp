@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <regex>
 using namespace std;
 
 /*
@@ -14,7 +15,7 @@ struct Contato
 {
     // armazena os dados dos contatos
     string nome;
-    int telefone;
+    string telefone; // usar string pra telefone com objetivo de validar com facilidade
     string email;
 };
 
@@ -26,6 +27,19 @@ cria um vetor vazio que pode armazenar múltiplos objetos Contato.
 *resumo: ele gerencia a memoria automaticamente*
 
 */
+
+bool validar_telefone(const string& telefone){
+    regex padrao_telefone(R"(^9\d{4}-\d{4}$)"); 
+    /*
+    ^ = inicio da string
+    9 = começa com o numero 9
+    \d = qualquer numero de 0 a 9
+    {4} = deve haver 4 digitos
+    - = traço separando as duas partes
+    $ = final da string
+    */
+   return regex_match(telefone, padrao_telefone);
+}
 
 void imprimir_menu(){
     // imprime opções para o usuário escolher o que quer fazer
@@ -47,15 +61,18 @@ void consultar_contato(){
 void adicionar_contato(){
     Contato novo_contato;
 
-    cout << "digite o nome do contato" << endl;
+    cout << "digite o nome do contato: " << endl;
+    cin.ignore();
     getline(cin, novo_contato.nome);
 
-    cout << "digite o telefone do contato" << endl;
-    cin >> novo_contato.telefone;
-
-    cin.ignore();
-    // limpa o que sobrou do cin (depois do numero coletado sobra um \n no final) 
-    cout << "digite o email do contato" << endl;
+    cout << "digite o telefone do contato (formato 9XXXX-XXXX): " << endl;
+    getline(cin, novo_contato.telefone);
+    while(!validar_telefone(novo_contato.telefone)){
+        cout << "número de telefone inválido." << endl;
+        getline(cin, novo_contato.telefone);
+    }
+ 
+    cout << "digite o email do contato: " << endl;
     getline(cin, novo_contato.email);
 
     agenda.push_back(novo_contato);
