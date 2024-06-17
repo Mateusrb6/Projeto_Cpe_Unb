@@ -78,7 +78,7 @@ int selecionar_opcao(){
     cin >> opcao;
     return opcao;
 }
-void consultar_contato(){
+void consultar_contato(const vector<Contato>& agenda){
     // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
 
 }
@@ -117,12 +117,12 @@ void adicionar_contato(){
 
 }
 
-void apagar_contato(){
+void apagar_contato(const vector<Contato>& agenda){
     // pede nome do contato para apagar o contato
 
 }
 
-void editar_contato(){
+void editar_contato(const vector<Contato>& agenda){
     // edita informacoes do contato (nome, telefone ou email)
 
 }
@@ -137,9 +137,10 @@ void mostrar_contatos_existentes(const vector<Contato>& agenda){
     
     for (int i = 0; i < agenda.size(); i++)
     {
+        // ciclo de repetição de 0 até o tamanho total da agenda
         const Contato& contato = agenda.at(i);
         cout << "\t ---Agenda de contatos---" << endl;
-        cout << "Contato número" << i+1 << " :"<< endl;
+        cout << "Contato número" << i+1 << " :"<< endl; // exibe o numero do contato (i+1 porque i começa com 0)
         cout << "Nome: " << contato.nome << endl;
         cout << "Email: " << contato.email << endl;
         cout << "Telefone: " << contato.telefone << endl;
@@ -149,16 +150,16 @@ void mostrar_contatos_existentes(const vector<Contato>& agenda){
 void menu_opcoes(int opcao){
     switch(opcao){
         case 1:
-            consultar_contato();
+            consultar_contato(agenda);
             break;
         case 2:
             adicionar_contato();
             break;
         case 3:
-            apagar_contato();
+            apagar_contato(agenda);
             break;
         case 4:
-            editar_contato();
+            editar_contato(agenda);
             break;
         case 5:
             mostrar_contatos_existentes(agenda);
