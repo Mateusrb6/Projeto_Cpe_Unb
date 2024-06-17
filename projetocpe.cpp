@@ -127,9 +127,23 @@ void editar_contato(){
 
 }
 
-void mostrar_contatos_existentes(){
+void mostrar_contatos_existentes(const vector<Contato>& agenda){
     // lista todos os contatos da agenda
+    if(agenda.empty()){
+        // verifica se a agenda está vazia
+        cout << "agenda vazia." << endl;
+        return;
+    } 
     
+    for (int i = 0; i < agenda.size(); i++)
+    {
+        const Contato& contato = agenda.at(i);
+        cout << "\t ---Agenda de contatos---" << endl;
+        cout << "Contato número" << i+1 << " :"<< endl;
+        cout << "Nome: " << contato.nome << endl;
+        cout << "Email: " << contato.email << endl;
+        cout << "Telefone: " << contato.telefone << endl;
+    }
 }
 
 void menu_opcoes(int opcao){
@@ -147,7 +161,7 @@ void menu_opcoes(int opcao){
             editar_contato();
             break;
         case 5:
-            mostrar_contatos_existentes();
+            mostrar_contatos_existentes(agenda);
             break;
         case 6:
             cout << "encerrando...";
