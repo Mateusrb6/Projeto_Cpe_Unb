@@ -276,8 +276,8 @@ void mostrar_contatos_existentes(const vector<Contato>& agenda){
     {
         // ciclo de repetição de 0 até o tamanho total da agenda
         const Contato& contato = agenda.at(i);
-        cout << "\t ---Agenda de contatos---" << endl;
-        cout << "Contato número" << i+1 << " :"<< endl; // exibe o numero do contato (i+1 porque i começa com 0)
+
+        cout << "\tContato número " << i+1 << " :"<< endl; // exibe o numero do contato (i+1 porque i começa com 0)
         cout << "Nome: " << contato.nome << endl;
         cout << "Email: " << contato.email << endl;
         cout << "Telefone: " << contato.telefone << endl;
