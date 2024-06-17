@@ -80,7 +80,54 @@ int selecionar_opcao(){
 }
 void consultar_contato(const vector<Contato>& agenda){
     // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
+    cout << "Escolha uma das opções de consulta: \n1) Nome\n2) Telefone\n3) Email." << endl;
 
+    int opcao_consulta;
+    string nome_consulta, telefone_consulta, email_consulta;
+    cin >> opcao_consulta;
+
+    switch (opcao_consulta)
+    {
+        case 1:
+            cout << "digite o nome do contato: " << endl;
+    
+            cin.ignore();
+            getline(cin, nome_consulta);
+
+            while(!validar_nome(nome_consulta)){
+                cout << "Nome inválido. Tente novamente." << endl;
+                getline(cin, nome_consulta);
+            }
+
+            break;
+        case 2:
+            cout << "digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
+
+            cin.ignore();
+            getline(cin, telefone_consulta);
+
+            while(!validar_telefone(telefone_consulta)){
+                cout << "Telefone inválido. Tente novamente." << endl;
+                getline(cin, telefone_consulta);
+            }
+
+            break;
+        case 3:
+            cout << "digite o email do contato: " << endl;
+
+            cin.ignore();
+            getline(cin, email_consulta);
+
+            while(!validar_email(email_consulta)){
+                cout << "Telefone inválido. Tente novamente." << endl;
+                getline(cin, email_consulta);
+            }
+            
+            break;
+        default:
+            cout << "opção inválida. Tente novamente." << endl;
+            break;
+    }
 }
 
 void adicionar_contato(){
