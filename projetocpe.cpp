@@ -88,6 +88,7 @@ void consultar_contato(const vector<Contato>& agenda){
 
     switch (opcao_consulta)
     {
+        // consulta de acordo com a informação dada pelo usuario
         case 1:
             cout << "digite o nome do contato: " << endl;
     
