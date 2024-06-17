@@ -28,7 +28,16 @@ cria um vetor vazio que pode armazenar múltiplos objetos Contato.
 
 */
 
+bool validar_nome(const string& nome){
+    regex padrao_nome(R"([a-zA-Z\s]+)");
+
+    // define que podem ser usadas letras maisculas (A-Z) e minusculas (a-z)
+    
+    return regex_match(nome, padrao_nome);
+}
+
 bool validar_telefone(const string& telefone){
+    // valida o telefone usando a biblioteca regex
     regex padrao_telefone(R"(^9\d{4}-\d{4}$)"); 
     /*
     ^ = inicio da string
@@ -41,6 +50,20 @@ bool validar_telefone(const string& telefone){
    return regex_match(telefone, padrao_telefone);
 }
 
+bool validar_email(const string& email){
+    // valida o email usando a biblioteca regex
+    regex padrao_email(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
+    /*
+    [a-zA-Z0-9._%+-]+ = define caracteres validos antes do @
+    @ = separa o nome do usuario do dominio do email
+    [a-zA-Z0-9.-]+ = caracteres validos pro dominio do email
+    \. = separa dominio da extensão do dominio
+    [a-zA-Z]{2,} = define caracteres validos pra extensão do dominio
+    R"(...)" = delimitador da string
+    */
+    return regex_match(email, padrao_email);
+}
+
 void imprimir_menu(){
     // imprime opções para o usuário escolher o que quer fazer
     cout << "--------- Agenda de contatos --------- \n" << "Funcoes: \n" <<
@@ -50,20 +73,27 @@ void imprimir_menu(){
 }
 
 int selecionar_opcao(){
+    // pega a opção selecionada pelo usuario 
     int opcao;
     cin >> opcao;
     return opcao;
 }
 void consultar_contato(){
+    // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
 
 }
 
 void adicionar_contato(){
+    // adiciona contato pedindo ao usuario o nome, telefone e email
     Contato novo_contato;
 
     cout << "digite o nome do contato: " << endl;
     cin.ignore();
     getline(cin, novo_contato.nome);
+    while(!validar_nome(novo_contato.nome)){
+        cout << "nome invalido." << endl;
+        getline(cin, novo_contato.nome);
+    }
 
     cout << "digite o telefone do contato (formato 9XXXX-XXXX): " << endl;
     getline(cin, novo_contato.telefone);
@@ -74,6 +104,12 @@ void adicionar_contato(){
  
     cout << "digite o email do contato: " << endl;
     getline(cin, novo_contato.email);
+    while (!validar_email(novo_contato.email))
+    {
+        cout << "email inválido." << endl;
+        getline(cin, novo_contato.email);
+    }
+    
 
     agenda.push_back(novo_contato);
     // adiciona o novo_contato no final do vetor agenda
@@ -82,15 +118,18 @@ void adicionar_contato(){
 }
 
 void apagar_contato(){
+    // pede nome do contato para apagar o contato
 
 }
 
 void editar_contato(){
+    // edita informacoes do contato (nome, telefone ou email)
 
 }
 
 void mostrar_contatos_existentes(){
-
+    // lista todos os contatos da agenda
+    
 }
 
 void menu_opcoes(int opcao){
