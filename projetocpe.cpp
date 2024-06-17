@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 /*
@@ -9,7 +10,7 @@ using namespace std;
 suas informações
 */
 
-struct contatos
+struct Contato
 {
     // armazena os dados dos contatos
     string nome;
@@ -17,6 +18,14 @@ struct contatos
     string email;
 };
 
+vector<Contato> agenda;
+/*
+cria um vetor vazio que pode armazenar múltiplos objetos Contato. 
+é um vetor dinamico com capacidade de aumentar ou diminuir de tamanho conforme a necessidade
+
+*resumo: ele gerencia a memoria automaticamente*
+
+*/
 
 void imprimir_menu(){
     // imprime opções para o usuário escolher o que quer fazer
@@ -36,6 +45,22 @@ void consultar_contato(){
 }
 
 void adicionar_contato(){
+    Contato novo_contato;
+
+    cout << "digite o nome do contato" << endl;
+    getline(cin, novo_contato.nome);
+
+    cout << "digite o telefone do contato" << endl;
+    cin >> novo_contato.telefone;
+
+    cin.ignore();
+    // limpa o que sobrou do cin (depois do numero coletado sobra um \n no final) 
+    cout << "digite o email do contato" << endl;
+    getline(cin, novo_contato.email);
+
+    agenda.push_back(novo_contato);
+    // adiciona o novo_contato no final do vetor agenda
+    cout << "Contato adicionado." << endl;
 
 }
 
