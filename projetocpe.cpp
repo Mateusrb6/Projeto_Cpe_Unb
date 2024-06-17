@@ -166,12 +166,101 @@ void adicionar_contato(){
 
 void apagar_contato(const vector<Contato>& agenda){
     // pede nome do contato para apagar o contato
+    cout << "Escolha uma das opções para apagar o contato: \n1) Nome\n2) Telefone\n3) Email." << endl;
+    // encontrar o contato a ser apagado por meio de uma das opções, em seguida apagar o contato correspondente
 
+    int opcao_apagar;
+    string nome, telefone, email;
+    cin >> opcao_apagar;
+
+    switch (opcao_apagar)
+    {
+        case 1:
+            cout << "digite o nome do contato: " << endl;
+    
+            cin.ignore();
+            getline(cin, nome);
+
+            while(!validar_nome(nome)){
+                cout << "Nome inválido. Tente novamente." << endl;
+                getline(cin, nome);
+            }
+
+            break;
+        case 2:
+            cout << "digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
+
+            cin.ignore();
+            getline(cin, telefone);
+
+            while(!validar_telefone(telefone)){
+                cout << "Telefone inválido. Tente novamente." << endl;
+                getline(cin, telefone);
+            }
+
+            break;
+        case 3:
+            cout << "digite o email do contato: " << endl;
+
+            cin.ignore();
+            getline(cin, email);
+
+            while(!validar_email(email)){
+                cout << "Telefone inválido. Tente novamente." << endl;
+                getline(cin, email);
+            }
+            break;
+        default:
+            cout << "opção inválida. Tente novamente." << endl;
+            break;
+    }
 }
 
 void editar_contato(const vector<Contato>& agenda){
     // edita informacoes do contato (nome, telefone ou email)
+    cout << "Digite o nome do contato para editar suas informações: " << endl;
 
+    string nome_contato;
+    getline(cin, nome_contato);
+    // busca o contato a partir de seu nome
+
+    int opcao_edicao;
+    cout << "Selecione o que deseja alterar: 1) Nome\n2) Telefone\n3) email" << endl;
+    cin >> opcao_edicao;
+    // pergunta qual informação o usuario deseja editar
+
+    string novo_nome;
+    string novo_telefone;
+    string novo_email;
+
+    switch (opcao_edicao)
+    {
+    case 1:
+        cout << "digite o novo nome: " << endl;
+
+        cin.ignore();
+        getline(cin, novo_nome);
+
+        break;
+    case 2:
+        cout << "digite o novo telefone: " << endl;
+
+        cin.ignore();
+        getline(cin, novo_telefone);
+
+        break;
+    case 3:
+        cout << "digite o novo email: " << endl;
+
+        cin.ignore();
+        getline(cin, novo_email);
+
+        break;
+    default:
+        cout << "opção invalida. Tente novamente.";
+        cin >> opcao_edicao;
+        break;
+    }
 }
 
 void mostrar_contatos_existentes(const vector<Contato>& agenda){
