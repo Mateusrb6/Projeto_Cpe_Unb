@@ -230,9 +230,7 @@ void editar_contato(const vector<Contato>& agenda){
     cin >> opcao_edicao;
     // pergunta qual informação o usuario deseja editar
 
-    string novo_nome;
-    string novo_telefone;
-    string novo_email;
+    string novo_nome, novo_telefone, novo_email;
 
     switch (opcao_edicao)
     {
