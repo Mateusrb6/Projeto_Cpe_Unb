@@ -1,7 +1,7 @@
 <h1 align="center">📒 Agenda de Contatos</h1>
 
 ## :memo: Descrição
-*  Agenda de contatos desenvolivida em C++ permite a criação de novos contatos, armazenando informações diversas sobre eles (nome, telefone e email). Também é possível apagar, editar as informações dos contatos e a pesquisa de contatos por meio de qualquer uma de suas informações. 
+*  Agenda de contatos desenvolivida em C++ que permite a criação de novos contatos, armazenando informações diversas sobre eles (nome, telefone e email). Também é possível apagar, editar as informações dos contatos e a pesquisa de contatos por meio de qualquer uma de suas informações. 
 ## :books: Funcionalidades
 * Criação de contatos
 * Edição de informações dos contatos
