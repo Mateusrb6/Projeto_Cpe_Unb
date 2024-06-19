@@ -17,8 +17,8 @@
 
 ## 📸 Fotos do Projeto
   div>
-      <img src="imagensProjeto\agendadecontatos.PNG" />
-        <img src="imagensProjeto\agendadecontatos2.PNG" />
-          <img src="imageensProjeto\agendadecontatos3.PNG" />
+      <img src="imagensProjeto\agendadecontatos.png" />
+        <img src="imagensProjeto\agendadecontatos2.png" />
+          <img src="imageensProjeto\agendadecontatos3.png" />
   <div>
           
