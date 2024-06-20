@@ -113,7 +113,7 @@ void consultar_contato(const vector<Contato>& agenda){
 
     if(agenda.empty()){
         // verifica se a agenda está vazia
-        cout << "agenda vazia." << endl;
+        cout << "Agenda vazia." << endl;
         return;
     }
 
@@ -130,7 +130,7 @@ void consultar_contato(const vector<Contato>& agenda){
         {
             // consulta de acordo com a informação dada pelo usuario
             case 1:
-                cout << "digite o nome do contato: " << endl;
+                cout << "Digite o nome do contato: " << endl;
 
                 cin.ignore();
                 getline(cin, nome_consulta);
@@ -152,7 +152,7 @@ void consultar_contato(const vector<Contato>& agenda){
 
                 break;
             case 2:
-                cout << "digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
+                cout << "Digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
 
                 cin.ignore();
                 getline(cin, telefone_consulta);
@@ -172,7 +172,7 @@ void consultar_contato(const vector<Contato>& agenda){
 
                 break;
             case 3:
-                cout << "digite o email do contato: " << endl;
+                cout << "Digite o email do contato: " << endl;
 
                 cin.ignore();
                 getline(cin, email_consulta);
@@ -192,7 +192,7 @@ void consultar_contato(const vector<Contato>& agenda){
 
                 break;
             default:
-                cout << "opção inválida. Tente novamente." << endl;
+                cout << "Opção inválida. Tente novamente." << endl;
                 valid = 1;
                 break;
         }
@@ -205,7 +205,7 @@ void adicionar_contato(){
     // adiciona contato pedindo ao usuario o nome, telefone e email
     Contato novo_contato;
 
-    cout << "digite o nome do contato: " << endl;
+    cout << "Digite o nome do contato: " << endl;
     cin.ignore();
     getline(cin, novo_contato.nome);
     while(!validar_nome(novo_contato.nome)){
@@ -213,18 +213,18 @@ void adicionar_contato(){
         getline(cin, novo_contato.nome);
     }
 
-    cout << "digite o telefone do contato (formato 9XXXX-XXXX): " << endl;
+    cout << "Digite o telefone do contato (formato 9XXXX-XXXX): " << endl;
     getline(cin, novo_contato.telefone);
     while(!validar_telefone(novo_contato.telefone)){
-        cout << "número de telefone inválido." << endl;
+        cout << "Número de telefone inválido." << endl;
         getline(cin, novo_contato.telefone);
     }
 
-    cout << "digite o email do contato: " << endl;
+    cout << "Digite o email do contato: " << endl;
     getline(cin, novo_contato.email);
     while (!validar_email(novo_contato.email))
     {
-        cout << "email inválido." << endl;
+        cout << "Email inválido." << endl;
         getline(cin, novo_contato.email);
     }
 
@@ -239,7 +239,7 @@ void apagar_contato(vector<Contato>& agenda){
 
     if(agenda.empty()){
         // verifica se a agenda está vazia
-        cout << "agenda vazia." << endl;
+        cout << "Agenda vazia." << endl;
         return;
     }
 
@@ -258,7 +258,7 @@ void apagar_contato(vector<Contato>& agenda){
         {
             // consulta de acordo com a informação dada pelo usuario
             case 1:
-                cout << "digite o nome do contato: " << endl;
+                cout << "Digite o nome do contato: " << endl;
 
                 cin.ignore();
                 getline(cin, nome);
@@ -280,7 +280,7 @@ void apagar_contato(vector<Contato>& agenda){
 
                 break;
             case 2:
-                cout << "digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
+                cout << "Digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
 
                 cin.ignore();
                 getline(cin, telefone);
@@ -300,7 +300,7 @@ void apagar_contato(vector<Contato>& agenda){
 
                 break;
             case 3:
-                cout << "digite o email do contato: " << endl;
+                cout << "Digite o email do contato: " << endl;
 
                 cin.ignore();
                 getline(cin, email);
@@ -320,7 +320,7 @@ void apagar_contato(vector<Contato>& agenda){
 
                 break;
             default:
-                cout << "opção inválida. Tente novamente." << endl;
+                cout << "Opção inválida. Tente novamente." << endl;
                 valid = 1;
                 break;
         }
@@ -347,28 +347,28 @@ void editar_contato(const vector<Contato>& agenda){
     switch (opcao_edicao)
     {
     case 1:
-        cout << "digite o novo nome: " << endl;
+        cout << "Digite o novo nome: " << endl;
 
         cin.ignore();
         getline(cin, novo_nome);
 
         break;
     case 2:
-        cout << "digite o novo telefone: " << endl;
+        cout << "Digite o novo telefone: " << endl;
 
         cin.ignore();
         getline(cin, novo_telefone);
 
         break;
     case 3:
-        cout << "digite o novo email: " << endl;
+        cout << "Digite o novo email: " << endl;
 
         cin.ignore();
         getline(cin, novo_email);
 
         break;
     default:
-        cout << "opção invalida. Tente novamente.";
+        cout << "Opção invalida. Tente novamente.";
         cin >> opcao_edicao;
         break;
     }
@@ -379,7 +379,7 @@ void mostrar_contatos_existentes(const vector<Contato>& agenda){
     // lista todos os contatos da agenda
     if(agenda.empty()){
         // verifica se a agenda está vazia
-        cout << "agenda vazia." << endl;
+        cout << "Agenda vazia." << endl;
         return;
     }
 
@@ -413,10 +413,10 @@ void menu_opcoes(int opcao){
                 mostrar_contatos_existentes(agenda);
                 break;
             case 6:
-                cout << "encerrando...";
+                cout << "Encerrando...";
                 break;
             default:
-                cout << "opção inválida";
+                cout << "Opção inválida";
                 valid = 1;
                 break;
         }
