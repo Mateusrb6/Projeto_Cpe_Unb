@@ -1,5 +1,10 @@
 <h1 align="center">📒 Agenda de Contatos</h1>
 
+<a>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+</a>
+
+
 ## :memo: Descrição
 *  Agenda de contatos desenvolvida em C++ que permite a criação de novos contatos, armazenando informações diversas sobre eles (nome, telefone e email). Também é possível apagar, editar as informações dos contatos e a pesquisa de contatos por meio de qualquer uma de suas informações. 
 ## :books: Funcionalidades
@@ -27,6 +32,3 @@
   <img src="imagensProjeto\agendadecontatos3.png" />    
   <div>
           
-<a>
-  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
-</a>
