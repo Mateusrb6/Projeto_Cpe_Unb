@@ -468,15 +468,9 @@ void menu_opcoes(int opcao){
                 cout << "Encerrando...";
                 break;
             default:
-<<<<<<< HEAD
                 cout << "Opção inválida" << endl;
                 break;
         }
-=======
-                cout << "Opção inválida";
-                break;
-         }
->>>>>>> 9eab07c991d46a5e21f8b5919f33598dfa345153
 }
 
 int main(){
