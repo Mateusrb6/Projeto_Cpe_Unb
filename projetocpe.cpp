@@ -371,9 +371,8 @@ void editar_contato(vector<Contato>& agenda){
     // pergunta qual informação o usuario deseja editar
 
 
-    string novo_nome;
-    string novo_telefone;
-    string novo_email;
+    string novo_nome, novo_telefone, novo_email;
+    
     while(valid){
         valid = 0;
         cin >> opcao_edicao;
