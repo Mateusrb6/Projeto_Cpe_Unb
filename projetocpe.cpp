@@ -389,7 +389,7 @@ void editar_contato(vector<Contato>& agenda){
                     getline(cin, novo_nome);
                 }
 
-        
+
             contato.nome = novo_nome;
             cout << "Nome editado." << endl;
             break;
@@ -402,7 +402,7 @@ void editar_contato(vector<Contato>& agenda){
                 cout << "Telefone inválido. Tente novamente." << endl;
                 getline(cin, novo_telefone);
             }
-    
+
             contato.telefone = novo_telefone;
             cout << "Telefone editado." << endl;
 
@@ -416,7 +416,7 @@ void editar_contato(vector<Contato>& agenda){
                   cout << "Email inválido. Tente novamente." << endl;
                   getline(cin, novo_email);
               }
-  
+
             contato.email = novo_email;
             cout << "Email editado." << endl;
             break;
@@ -468,9 +468,15 @@ void menu_opcoes(int opcao){
                 cout << "Encerrando...";
                 break;
             default:
+<<<<<<< HEAD
                 cout << "Opção inválida" << endl;
                 break;
         }
+=======
+                cout << "Opção inválida";
+                break;
+         }
+>>>>>>> 9eab07c991d46a5e21f8b5919f33598dfa345153
 }
 
 int main(){
