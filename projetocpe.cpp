@@ -75,9 +75,18 @@ void imprimir_menu(){
 
 int selecionar_opcao(){
     // pega a opção selecionada pelo usuario
-    int opcao;
-    cin >> opcao;
-    return opcao;
+    string opcao;
+    getline(cin, opcao);
+
+    for(char c : opcao){
+        if (!isdigit(c))
+        {
+            return -1;
+        }
+        
+    }
+
+   return stoi(opcao);
 }
 
 //Imprime os dados do contato
@@ -439,9 +448,6 @@ void mostrar_contatos_existentes(const vector<Contato>& agenda){
 }
 
 void menu_opcoes(int opcao){
-    bool valid = 1;
-    while(valid){
-        valid = 0;
         switch(opcao){
             case 1:
                 consultar_contato(agenda);
@@ -462,11 +468,9 @@ void menu_opcoes(int opcao){
                 cout << "Encerrando...";
                 break;
             default:
-                cout << "Opção inválida";
-                valid = 1;
+                cout << "Opção inválida" << endl;
                 break;
         }
-    }
 }
 
 int main(){
@@ -476,7 +480,7 @@ int main(){
         int opcao = selecionar_opcao();
             if (opcao == 6){
             break;
-            }
+            } 
         menu_opcoes(opcao);
     }
 
