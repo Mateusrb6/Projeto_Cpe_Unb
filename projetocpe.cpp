@@ -1,3 +1,4 @@
+%%cpp -n codigo.cpp
 #include <iostream>
 #include <vector>
 #include <regex>
@@ -126,24 +127,23 @@ void consultar_contato(const vector<Contato>& agenda){
         return;
     }
 
-    // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
-    cout << "Escolha uma das opções de consulta: \n1) Nome\n2) Telefone\n3) Email." << endl;
-
-    int opcao_consulta;
     bool valid = 1;
     string nome_consulta, telefone_consulta, email_consulta;
+
     while(valid){
-    cin >> opcao_consulta;
+    valid = 0;
+
+    // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
+    cout << "Escolha uma das opções de consulta: \n1) Nome\n2) Telefone\n3) Email." << endl;
+    int opcao_consulta = selecionar_opcao() ;
 
         switch (opcao_consulta)
         {
             // consulta de acordo com a informação dada pelo usuario
             case 1:
                 cout << "Digite o nome do contato: " << endl;
-
-                cin.ignore();
                 getline(cin, nome_consulta);
-
+            
                 while(!validar_nome(nome_consulta)){
                     cout << "Nome inválido. Tente novamente." << endl;
                     getline(cin, nome_consulta);
@@ -157,13 +157,11 @@ void consultar_contato(const vector<Contato>& agenda){
                 }
 
                 else cout << "Nome não encontrado" << endl;
-                valid = 0; //Quebra o loop principal ou seja uma opção valida foi escolhida
 
                 break;
             case 2:
                 cout << "Digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
 
-                cin.ignore();
                 getline(cin, telefone_consulta);
 
                 while(!validar_telefone(telefone_consulta)){
@@ -177,13 +175,10 @@ void consultar_contato(const vector<Contato>& agenda){
                     mostrar_contato(busca,contato);
                 }
                 else cout << "Telefone não encontrado" << endl;
-                valid = 0; //Quebra o loop principal ou seja uma opção valida foi escolhida
 
                 break;
             case 3:
                 cout << "Digite o email do contato: " << endl;
-
-                cin.ignore();
                 getline(cin, email_consulta);
 
                 while(!validar_email(email_consulta)){
@@ -197,7 +192,6 @@ void consultar_contato(const vector<Contato>& agenda){
                     mostrar_contato(busca,contato);
                 }
                 else cout << "Email não encontrado" << endl;
-                valid = 0; //Quebra o loop principal ou seja uma opção valida foi escolhida
 
                 break;
             default:
@@ -215,14 +209,15 @@ void adicionar_contato(){
     Contato novo_contato;
 
     cout << "Digite o nome do contato: " << endl;
-    cin.ignore();
     getline(cin, novo_contato.nome);
+
     while(!validar_nome(novo_contato.nome)){
         cout << "nome invalido." << endl;
         getline(cin, novo_contato.nome);
     }
 
     cout << "Digite o telefone do contato (formato 9XXXX-XXXX): " << endl;
+
     getline(cin, novo_contato.telefone);
     while(!validar_telefone(novo_contato.telefone)){
         cout << "Número de telefone inválido." << endl;
@@ -230,6 +225,7 @@ void adicionar_contato(){
     }
 
     cout << "Digite o email do contato: " << endl;
+        
     getline(cin, novo_contato.email);
     while (!validar_email(novo_contato.email))
     {
@@ -252,86 +248,84 @@ void apagar_contato(vector<Contato>& agenda){
         return;
     }
 
-    // pede nome do contato para apagar o contato
-    cout << "Escolha uma das opções para apagar o contato: \n1) Nome\n2) Telefone\n3) Email." << endl;
+   
     // encontrar o contato a ser apagado por meio de uma das opções, em seguida apagar o contato correspondente
 
-    int opcao_apagar;
     bool valid = 1;
     string nome, telefone, email;
 
     while(valid){
-    cin >> opcao_apagar;
-        switch (opcao_apagar)
-        {
-            // consulta de acordo com a informação dada pelo usuario
-            case 1:
-                cout << "Digite o nome do contato: " << endl;
+      valid = 0;
 
-                cin.ignore();
-                getline(cin, nome);
+      // pede nome do contato para apagar o contato
+      cout << "Escolha uma das opções para apagar o contato: \n1) Nome\n2) Telefone\n3) Email." << endl;
+      int opcao_apagar = selecionar_opcao() ;
 
-                while(!validar_nome(nome)){
-                    cout << "Nome inválido. Tente novamente." << endl;
-                    getline(cin, nome);
-                }
+      switch (opcao_apagar)
+      {
+          // consulta de acordo com a informação dada pelo usuario
+          case 1:
+              cout << "Digite o nome do contato: " << endl;
 
-                int busca;
-                busca = busca_contato(nome,agenda);
-                if(busca != -1) {
-                    agenda.erase(agenda.begin() +busca);
-                    cout << "Contato apagado." << endl;
-                }
+              cin.ignore();
+              getline(cin, nome);
 
-                else cout << "Nome não encontrado" << endl;
-                valid = 0; //Quebra o loop principal ou seja uma opção valida foi escolhida
+              while(!validar_nome(nome)){
+                  cout << "Nome inválido. Tente novamente." << endl;
+                  getline(cin, nome);
+              }
 
-                break;
-            case 2:
-                cout << "Digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
+              int busca;
+              busca = busca_contato(nome,agenda);
+              if(busca != -1) {
+                  agenda.erase(agenda.begin() +busca);
+                  cout << "Contato apagado." << endl;
+              }
 
-                cin.ignore();
-                getline(cin, telefone);
+              else cout << "Nome não encontrado" << endl;
+              break;
+      
+          case 2:
+              cout << "Digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
 
-                while(!validar_telefone(telefone)){
-                    cout << "Telefone inválido. Tente novamente." << endl;
-                    getline(cin, telefone);
-                }
+              getline(cin, telefone);
 
-                busca = busca_contato(telefone,agenda);
-                if(busca != -1) {
-                    agenda.erase(agenda.begin() +busca);
-                    cout << "Contato apagado." << endl;
-                }
-                else cout << "Telefone não encontrado" << endl;
-                valid = 0; //Quebra o loop principal ou seja uma opção valida foi escolhida
+              while(!validar_telefone(telefone)){
+                  cout << "Telefone inválido. Tente novamente." << endl;
+                  getline(cin, telefone);
+              }
 
-                break;
-            case 3:
-                cout << "Digite o email do contato: " << endl;
+              busca = busca_contato(telefone,agenda);
+              if(busca != -1) {
+                  agenda.erase(agenda.begin() +busca);
+                  cout << "Contato apagado." << endl;
+              }
+              else cout << "Telefone não encontrado" << endl;
+              break;
+    
+          case 3:
+              cout << "Digite o email do contato: " << endl;
 
-                cin.ignore();
-                getline(cin, email);
+              getline(cin, email);
 
-                while(!validar_email(email)){
-                    cout << "Email inválido. Tente novamente." << endl;
-                    getline(cin, email);
-                }
+              while(!validar_email(email)){
+                  cout << "Email inválido. Tente novamente." << endl;
+                  getline(cin, email);
+              }
 
-                busca = busca_contato(email,agenda);
-                if(busca != -1) {
-                    agenda.erase(agenda.begin() +busca);
-                    cout << "Contato apagado."<< endl;
-                }
-                else cout << "Email não encontrado" << endl;
-                valid = 0; //Quebra o loop principal ou seja uma opção valida foi escolhida
-
-                break;
-            default:
-                cout << "Opção inválida. Tente novamente." << endl;
-                valid = 1;
-                break;
-        }
+              busca = busca_contato(email,agenda);
+              if(busca != -1) {
+                  agenda.erase(agenda.begin() +busca);
+                  cout << "Contato apagado."<< endl;
+              }
+              else cout << "Email não encontrado" << endl;
+              break;
+           
+          default:
+              cout << "Opção inválida. Tente novamente." << endl;
+              valid = 1;
+              break;
+      }
     }
 }
 
@@ -342,14 +336,15 @@ void editar_contato(vector<Contato>& agenda){
         cout << "Agenda vazia." << endl;
         return;
     }
-    // edita informacoes do contato (nome, telefone ou email)
-    cout << "Digite o nome,telefone ou email do contato para editar suas informações: " << endl;
-    cin.ignore();
+    
 
     string informacao_contato;
 
     int busca = -1;
+    // edita informacoes do contato (nome, telefone ou email)
+    cout << "Digite o nome,telefone ou email do contato para editar suas informações: " << endl;
     while(busca == -1){
+
         getline(cin,informacao_contato);
         busca = busca_contato(informacao_contato,agenda);
         if(busca != -1)
@@ -365,22 +360,21 @@ void editar_contato(vector<Contato>& agenda){
 
     // busca o contato
 
-    int opcao_edicao;
     bool valid = 1;
-    cout << "Selecione o que deseja alterar: \n1) Nome\n2) Telefone\n3) email" << endl;
-    // pergunta qual informação o usuario deseja editar
-
 
     string novo_nome, novo_telefone, novo_email;
     
     while(valid){
         valid = 0;
-        cin >> opcao_edicao;
+
+        //  Pergunta qual informação o usuario deseja editar
+        cout << "Selecione o que deseja alterar: \n1) Nome\n2) Telefone\n3) email" << endl;
+        int opcao_edicao = selecionar_opcao() ;
+
         switch (opcao_edicao)
         {
         case 1:
             cout << "Digite o novo nome do contato: " << endl;
-            cin.ignore();
             getline(cin, novo_nome);
 
             while(!validar_nome(novo_nome)){
@@ -394,7 +388,6 @@ void editar_contato(vector<Contato>& agenda){
             break;
         case 2:
             cout << "Digite o novo telefone: " << endl;
-            cin.ignore();
             getline(cin, novo_telefone);
 
             while(!validar_telefone(novo_telefone)){
@@ -408,8 +401,6 @@ void editar_contato(vector<Contato>& agenda){
             break;
         case 3:
             cout << "Digite o novo email: " << endl;
-
-            cin.ignore();
             getline(cin, novo_email);
             while(!validar_email(novo_email)){
                   cout << "Email inválido. Tente novamente." << endl;
@@ -420,9 +411,8 @@ void editar_contato(vector<Contato>& agenda){
             cout << "Email editado." << endl;
             break;
         default:
-            cout << "Opção invalida. Tente novamente.";
+            cout << "Opção invalida. Tente novamente." << endl;
             valid  = 1;
-            cin >> opcao_edicao;
             break;
         }
     }
