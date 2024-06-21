@@ -1,4 +1,3 @@
-%%cpp -n codigo.cpp
 #include <iostream>
 #include <vector>
 #include <regex>
