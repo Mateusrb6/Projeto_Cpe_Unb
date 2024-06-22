@@ -155,7 +155,7 @@ void mostrar_contato_csv(const string& agendaContatos){
 
     string linha;
     getline(arquivo, linha);
-    
+
     int i = 0;
     while(getline(arquivo, linha)){
         vector<string> campos = split(linha, ',');
@@ -187,6 +187,16 @@ int busca_contato(const string& parametro_buscado, const vector<Contato>& agenda
     }
     return -1; // parametro nao encontrado
 }
+
+bool contato_duplicado(const Contato& novo_contato, const vector<Contato>& agenda){ //recebe o novo contato da funcao adicionar contato e os contatos da agenda
+    for(const auto& contato : agenda){ // for que percorre os contatos da agenda
+        if(contato.nome == novo_contato.nome || contato.telefone == novo_contato.telefone || contato.email == novo_contato.email){ // compara informacoes do contato com as do novo contaoto
+            return true; // contato ja existe
+        }
+    }
+    return false; //contato nao existe
+}
+
 void consultar_contato(const vector<Contato>& agenda){
 
     if(agenda.empty()){
@@ -280,11 +290,15 @@ void adicionar_contato(){
         getline(cin, novo_contato.email);
     }
 
-
-    agenda.push_back(novo_contato);
-    // adiciona o novo_contato no final do vetor agenda
-    cout << "Contato adicionado." << endl;
-    salvar_dados(agenda, "agendaContatos.csv");
+    if (contato_duplicado(novo_contato, agenda))
+    {
+       cout << "Contato já existente na agenda." << endl;
+    } else{
+        agenda.push_back(novo_contato);
+        // adiciona o novo_contato no final do vetor agenda
+        cout << "Contato adicionado." << endl;
+        salvar_dados(agenda, "agendaContatos.csv");
+    }
 }
 
 void apagar_contato(vector<Contato>& agenda) {
@@ -506,14 +520,15 @@ void carregar_dados(const string& agendaContatos){ // funcao para carregar infor
 }
 
 int main(){
-
+    carregar_dados("agendaContatos.csv");
     while (true){
-        carregar_dados("agendaContatos.csv");
         imprimir_menu();
         int opcao = selecionar_opcao();
+
             if (opcao == 6){
             break;
             } 
+            
         menu_opcoes(opcao);
     }
 
