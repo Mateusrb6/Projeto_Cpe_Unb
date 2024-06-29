@@ -199,7 +199,13 @@ void mostrar_contato_csv(const string &agendaContatos)
         Contato contato(nome, telefone, email); // cria um objeto Contato com os campos separados
         mostrar_contato(++i, contato); // chama a função mostrar_contato passando o indice e o contato como argumentos
     }
-    arquivo.close();
+    
+    if (agenda.empty()){ // verifica se a agenda está vazia
+        cout << "Agenda vazia." << endl;
+        return; // se a agenda estiver vazia, a função é encerrada
+    }
+
+    arquivo.close(); // fecha o arquivo
 }
 
 // Retorna o indice do contato buscado, no vetor agenda ou menos -1 caso não achado
