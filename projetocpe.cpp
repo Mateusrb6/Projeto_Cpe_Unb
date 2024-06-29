@@ -125,7 +125,7 @@ int selecionar_opcao()
     getline(cin, opcao);
 
     for (char c : opcao)
-    {                    // for que percorre cada item da opcao (char c)
+    {                    // for que percorre cada item (char c) da opcao 
         if (!isdigit(c)) // analisa se a string é um digito
         {
             return -1; // se não é um digito retorna -1
@@ -135,11 +135,20 @@ int selecionar_opcao()
     return stoi(opcao); // se é digito retorna a opcao transformada de string para inteiro (int)
 }
 
+string primeira_letra_maiuscula(const string& str){
+    if(str.empty()){
+        return str; // se a string estiver vazia retorna ela mesma (sem modificações)
+    }
+    string result = str; // cria uma string result que recebe a string str (cria uma cópia)
+    result[0] = toupper(result[0]); // transforma a primeira letra da string em maiuscula
+    return result; // retorna a string com a primeira letra em maiuscula
+}
+
 // Imprime os dados do contato
 void mostrar_contato(int i, const Contato &contato)
 {
     cout << "\tContato número " << ++i << " :" << '\n' // exibe o numero do contato (++i porque i começa com 0)
-         << "Nome: " << contato.nome << '\n'
+         << "Nome: " << primeira_letra_maiuscula(contato.nome) << '\n'
          << "Email: " << contato.email << '\n'
          << "Telefone: " << contato.telefone << '\n';
 }
