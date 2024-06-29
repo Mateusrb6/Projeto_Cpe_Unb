@@ -147,7 +147,7 @@ string primeira_letra_maiuscula(const string& str){
 // Imprime os dados do contato
 void mostrar_contato(int i, const Contato &contato)
 {
-    cout << "\tContato número " << ++i << " :" << '\n' // exibe o numero do contato (++i porque i começa com 0)
+    cout << "\tContato número " << i + 1 << " :" << '\n' // exibe o numero do contato (++i porque i começa com 0)
          << "Nome: " << primeira_letra_maiuscula(contato.nome) << '\n'
          << "Email: " << contato.email << '\n'
          << "Telefone: " << contato.telefone << '\n';
@@ -197,7 +197,7 @@ void mostrar_contato_csv(const string &agendaContatos)
         string email = campos[2]; // pega o email do contato
 
         Contato contato(nome, telefone, email); // cria um objeto Contato com os campos separados
-        mostrar_contato(i++, contato); // chama a função mostrar_contato passando o indice e o contato como argumentos
+        mostrar_contato(++i, contato); // chama a função mostrar_contato passando o indice e o contato como argumentos
     }
     arquivo.close();
 }
@@ -538,24 +538,6 @@ void editar_contato(vector<Contato> &agenda)
     else
     {
         cout << "Contato não encontrado." << endl;
-    }
-}
-
-void mostrar_contatos_existentes(const vector<Contato> &agenda)
-{ // lista todos os contatos da agenda
-
-    if (agenda.empty())
-    { // verifica se a agenda está vazia
-        cout << "Agenda vazia." << endl;
-        return;
-    }
-
-    for (int i = 0; i < agenda.size(); ++i)
-    { // ciclo de repetição de 0 até o tamanho total da agenda
-
-        const Contato &contato = agenda[i]; // pega o contato na posição i
-
-        mostrar_contato(i, contato); // chama a função mostrar_contato passando o indice e o contato como argumentos
     }
 }
 
