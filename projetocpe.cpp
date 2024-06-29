@@ -147,7 +147,7 @@ string primeira_letra_maiuscula(const string& str){
 // Imprime os dados do contato
 void mostrar_contato(int i, const Contato &contato)
 {
-    cout << "\tContato número " << i + 1 << " :" << '\n' // exibe o numero do contato (i+i porque i começa com 0)
+    cout << "\tContato número " << i + 1 << " :" << '\n' // exibe o numero do contato (i+1 porque i começa com 0)
          << "Nome: " << primeira_letra_maiuscula(contato.nome) << '\n'
          << "Email: " << contato.email << '\n'
          << "Telefone: " << contato.telefone << '\n';
