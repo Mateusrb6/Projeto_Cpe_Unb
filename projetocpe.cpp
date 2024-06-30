@@ -132,6 +132,10 @@ int selecionar_opcao()
         }
     }
 
+    if (opcao.empty()){
+        return -1; // se a string estiver vazia retorna -1
+    }
+
     return stoi(opcao); // se é digito retorna a opcao transformada de string para inteiro (int)
 }
 
