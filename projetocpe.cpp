@@ -68,9 +68,9 @@ void salvar_dados(const vector<Contato> &agenda, const string &agendaContatos)
 
 bool validar_nome(const string &nome)
 {
-    regex padrao_nome(R"([a-zA-Z\s]+)");
+    regex padrao_nome(R"(^[A-Z][a-z]*$)");
 
-    // define que podem ser usadas letras maisculas (A-Z) e minusculas (a-z)
+    // define que podem ser usadas como primeiro cararacter(^) letras maisculas (A-Z), e apenas minusculas (a-z) no restante 
 
     return regex_match(nome, padrao_nome); // retorna funcao que compara o nome como o padrao do regex
 }
@@ -273,7 +273,7 @@ void consultar_contato(const vector<Contato> &agenda)
     {
     // consulta de acordo com a informação dada pelo usuario
     case 1:
-        cout << "Digite o nome do contato: " << endl;
+        cout << "Digite o nome do contato (formato Nome): " << endl;
         getline(cin, parametro_consulta); // pega o nome do contato
 
         while (!validar_nome(parametro_consulta)) // valida o nome
@@ -333,7 +333,7 @@ void adicionar_contato()
 
     Contato novo_contato;
 
-    cout << "\nDigite o nome do contato: " << endl;
+    cout << "\nDigite o nome do contato (formato Nome): " << endl;
     getline(cin, novo_contato.nome); // pega o nome do contato
 
     while (!validar_nome(novo_contato.nome)) // valida o nome
@@ -394,7 +394,7 @@ void apagar_contato(vector<Contato> &agenda)
     switch (opcao_apagar)
     { // apaga o contato de acordo com a informação dada pelo usuario
     case 1:
-        cout << "Digite o nome do contato: " << endl;
+        cout << "Digite o nome do contato (formato Nome): " << endl;
         getline(cin, parametro_apagar); // pega o nome do contato
 
         while (!validar_nome(parametro_apagar)) // valida o nome
@@ -467,7 +467,7 @@ void editar_contato(vector<Contato> &agenda)
     switch (opcao_editar)
     {
     case 1: // edita o contato de acordo com o nome
-        cout << "Digite o nome do contato: " << endl;
+        cout << "Digite o nome do contato (formato Nome): " << endl;
         getline(cin, parametro_editar); // pega o nome do contato
 
         while (!validar_nome(parametro_editar))
@@ -482,7 +482,7 @@ void editar_contato(vector<Contato> &agenda)
         {
             Contato &contato = agenda[busca];
 
-            cout << "Digite o novo nome do contato: ";
+            cout << "Digite o novo nome do contato (formato Nome): ";
             getline(cin, parametro_editar); // pega o novo nome do contato
 
             if (!parametro_editar.empty())
