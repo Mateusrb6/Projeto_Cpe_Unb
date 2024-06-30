@@ -32,7 +32,7 @@
   <img src="imagensProjeto\agendadecontatos3.png" />    
   <div>
           
-## Desenvolvido por:
+## 👨🏻‍💻 Desenvolvido por:
 
   [<img src="https://github.com/Mateusrb6.png" width="60px;"/><br /><sub><a href="https://github.com/Mateusrb6">Mateus Reis Bastos</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
 
