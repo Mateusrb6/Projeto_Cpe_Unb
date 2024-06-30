@@ -5,6 +5,7 @@
 #include <sstream>  // biblioteca para manipular strings
 #include <string>   // biblioteca para manipular strings
 
+
 using namespace std;
 
 /*
@@ -151,7 +152,7 @@ string primeira_letra_maiuscula(const string& str){
 // Imprime os dados do contato
 void mostrar_contato(int i, const Contato &contato)
 {
-    cout << "\tContato número " << i + 1 << " :" << '\n' // exibe o numero do contato (i+1 porque i começa com 0)
+    cout << "\tContato número " << i << " :" << '\n'
          << "Nome: " << primeira_letra_maiuscula(contato.nome) << '\n'
          << "Email: " << contato.email << '\n'
          << "Telefone: " << contato.telefone << '\n';
@@ -251,7 +252,7 @@ void consultar_contato(const vector<Contato> &agenda)
     }
 
     // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
-    cout << "Escolha uma das opções de consulta: \n1) Nome\n2) Telefone\n3) Email." << endl;
+    cout << "Escolha uma das opções de consulta: \n(1) Nome\n(2) Telefone\n(3) Email." << endl;
     int opcao_consulta = selecionar_opcao();
 
     string parametro_consulta;
@@ -365,7 +366,7 @@ void apagar_contato(vector<Contato> &agenda)
         return; // se a agenda estiver vazia, a função é encerrada
     }
 
-    cout << "Escolha uma das opções para apagar o contato: \n1) Nome\n2) Telefone\n3) Email." << endl;
+    cout << "Escolha uma das opções para apagar o contato: \n(1) Nome\n(2) Telefone\n(3) Email." << endl;
     int opcao_apagar = selecionar_opcao();
 
     string parametro_apagar;
