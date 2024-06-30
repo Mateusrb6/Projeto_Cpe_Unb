@@ -34,6 +34,6 @@
           
 ## Developed By:
 
-  [<img src="https://github.com/Mateusrb6.png" width="60px;"/><br /><sub><a href="https://github.com/Mateusrb6">Mateusrb6</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
+  [<img src="https://github.com/Mateusrb6.png" width="60px;"/><br /><sub><a href="https://github.com/Mateusrb6">Mateus Reis </a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
 
-  [<img src="https://github.com/sa1700.png" width="60px;"/><br /><sub><a href="https://github.com/sa1700">sa1700</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
+  [<img src="https://github.com/sa1700.png" width="60px;"/><br /><sub><a href="https://github.com/sa1700">Samuel Rodrigues</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
