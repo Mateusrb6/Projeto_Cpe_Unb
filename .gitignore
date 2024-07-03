@@ -30,3 +30,27 @@
 *.exe
 *.out
 *.app
+
+# Generated files
+*.class
+*.jar
+
+# IDE files
+.idea/
+.vscode/
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build output
+build/
+dist/
+
+# Logs and databases
+*.log
+*.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
