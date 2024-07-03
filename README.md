@@ -27,9 +27,6 @@
 
     
   <img src="imagensProjeto\agendadecontatos2.png" />
-
-      
-  <img src="imagensProjeto\agendadecontatos3.png" />    
   <div>
           
 ## 👨🏻‍💻 Desenvolvido por:
