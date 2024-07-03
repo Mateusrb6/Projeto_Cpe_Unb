@@ -111,11 +111,11 @@ void imprimir_menu()
     cout <<"\n--------- Agenda de contatos --------- \n\n"
          << "Funcoes: \n"
          << "(1) Consultar contatos adicionados \n"
-         << "(2) adicionar contato \n"
-         << "(3) apagar contato \n"
-         << "(4) editar contatos \n"
+         << "(2) Adicionar contato \n"
+         << "(3) Apagar contato \n"
+         << "(4) Editar contatos \n"
          << "(5) Mostrar contatos\n"
-         << "(6) encerrar \n\n"
+         << "(6) Encerrar \n\n"
          << "Selecione uma das opcoes acima. \n\n";
 }
 
@@ -163,7 +163,7 @@ string primeira_letra_maiuscula(const string& str){
 // Imprime os dados do contato
 void mostrar_contato(int i, const Contato &contato)
 {
-    cout << "\tContato número " << i << " :" << '\n'
+    cout << "\tContato numero " << i << " :" << '\n'
          << "Nome: " << primeira_letra_maiuscula(contato.nome) << '\n'
          << "Email: " << contato.email << '\n'
          << "Telefone: " << contato.telefone << '\n';
@@ -204,7 +204,7 @@ void mostrar_contato_csv(const string &agendaContatos)
         vector<string> campos = split(linha, ','); // separa os campos da linha com a virgula
         if (campos.size() != 3) // se a linha não tiver 3 campos (nome, telefone e email) exibe mensagem de erro
         {
-            cerr << "linha invalida no arquivo" << endl;
+            cerr << "Linha invalida no arquivo" << endl;
             continue; // pula para a proxima linha
         }
 
@@ -338,7 +338,7 @@ void adicionar_contato()
 
     while (!validar_nome(novo_contato.nome)) // valida o nome
     {
-        cout << "nome invalido." << endl;
+        cout << "Nome invalido." << endl;
         getline(cin, novo_contato.nome); // pega o nome do contato novamente
     }
 
@@ -385,7 +385,7 @@ void apagar_contato(vector<Contato> &agenda)
         return; // se a agenda estiver vazia, a função é encerrada
     }
 
-    cout << "\nEscolha uma das opções para apagar o contato: \n(1) Nome\n(2) Telefone\n(3) Email." << endl;
+    cout << "\nEscolha uma das opções para apagar o contato: \n(1) Nome\n(2) Telefone\n(3) Email.\n" << endl;
     int opcao_apagar = selecionar_opcao();
 
     string parametro_apagar;
