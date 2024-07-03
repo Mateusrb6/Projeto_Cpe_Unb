@@ -30,7 +30,7 @@ struct Contato
         // define que o construtor aceita tres parametros sendo todos eles tipo string
         : nome(nome), telefone(telefone), email(email)
     {
-    } // inicializa os membros da estrutura com os valores passados como argumentos
+    } // inicializa os membros da estrutura com os valores passados como argumentos.
 };
 
 vector<Contato> agenda;
