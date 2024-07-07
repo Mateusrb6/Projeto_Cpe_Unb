@@ -482,7 +482,7 @@ void editar_contato(vector<Contato> &agenda)
         {
             Contato &contato = agenda[busca];
 
-            cout << "Digite o novo nome do contato (formato Nome): ";
+            cout << "Digite o novo nome do contato (formato Nome): \n";
             getline(cin, parametro_editar); // pega o novo nome do contato
 
             if (!parametro_editar.empty())
@@ -513,7 +513,7 @@ void editar_contato(vector<Contato> &agenda)
         {
             Contato &contato = agenda[busca];
 
-            cout << "Digite o novo telefone do contato: ";
+            cout << "Digite o novo telefone do contato: \n";
             getline(cin, parametro_editar); // pega o novo telefone do contato
 
             if (!parametro_editar.empty()) 
@@ -544,7 +544,7 @@ void editar_contato(vector<Contato> &agenda)
         {
             Contato &contato = agenda[busca]; // pega o contato na posição busca
 
-            cout << "Digite o novo email do contato: ";
+            cout << "Digite o novo email do contato: \n";
             getline(cin, parametro_editar); // pega o novo email do contato
 
             if (!parametro_editar.empty())
