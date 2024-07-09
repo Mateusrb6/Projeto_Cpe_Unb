@@ -33,4 +33,4 @@
 
   [<img src="https://github.com/Mateusrb6.png" width="60px;"/><br /><sub><a href="https://github.com/Mateusrb6">Mateus Reis Bastos</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
 
-  [<img src="https://github.com/SamuelRS2000.png" width="60px;"/><br /><sub><a href="https://github.com/sa1700">Samuel Rodrigues dos Santos</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
+  [<img src="https://github.com/SamuelRS2000.png" width="60px;"/><br /><sub><a href="https://github.com/SamuelRS2000">Samuel Rodrigues dos Santos</a></sub>](https://github.com/Mateusrb6/Projeto_Cpe_Unb)
