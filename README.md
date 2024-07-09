@@ -35,7 +35,7 @@
 
 ## 👨🏻‍🏫 Slides de apresentação
 
-*[Slides](https://github.com/Mateusrb6/Projeto_Cpe_Unb/blob/main/imagensProjeto/ProjetoComputacionalCPE.pptx)
+* [Slides](https://github.com/Mateusrb6/Projeto_Cpe_Unb/blob/main/imagensProjeto/ProjetoComputacionalCPE.pptx)
 
 ## 👨🏻‍💻 Desenvolvido por
 
