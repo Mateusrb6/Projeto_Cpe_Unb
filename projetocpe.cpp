@@ -275,7 +275,7 @@ void consultar_contato(const vector<Contato> &agenda)
         
         while (!validar_nome(parametro_consulta)) // valida o nome
         {
-            cout << "Nome inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Nome inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_consulta); // pega o nome do contato novamente
              if(!retornar_menu_principal(parametro_consulta)){
                 return; 
@@ -293,7 +293,7 @@ void consultar_contato(const vector<Contato> &agenda)
 
         while (!validar_telefone(parametro_consulta)) // valida o telefone
         {
-            cout << "Telefone inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Telefone inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_consulta); // pega o telefone do contato novamente
              if(!retornar_menu_principal(parametro_consulta)){
                 return; 
@@ -308,7 +308,7 @@ void consultar_contato(const vector<Contato> &agenda)
 
         while (!validar_email(parametro_consulta)) // valida o email
         {
-            cout << "Email inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Email inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_consulta); // pega o email do contato novamente
              if(!retornar_menu_principal(parametro_consulta)){
                 return; 
@@ -350,7 +350,7 @@ void adicionar_contato()
 
     while (!validar_nome(novo_contato.nome)) // valida o nome
     {
-            cout << "Nome inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Nome inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, novo_contato.nome); // pega o nome do contato novamente
              if(!retornar_menu_principal(novo_contato.nome)){
                 return; 
@@ -362,7 +362,7 @@ void adicionar_contato()
 
     while (!validar_telefone(novo_contato.telefone)) // valida o telefone
     {
-            cout << "Telefone inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Telefone inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, novo_contato.telefone); // pega o telefone do contato novamente
              if(!retornar_menu_principal(novo_contato.telefone)){
                 return; 
@@ -374,7 +374,7 @@ void adicionar_contato()
 
     while (!validar_email(novo_contato.email)) // valida o email
      {
-            cout << "Email inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Email inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, novo_contato.email); // pega o email do contato novamente
              if(!retornar_menu_principal(novo_contato.email)){
                 return; 
@@ -420,7 +420,7 @@ void apagar_contato(vector<Contato> &agenda)
 
         while (!validar_nome(parametro_apagar)) // valida o nome
         {
-            cout << "Nome inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Nome inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_apagar); // pega o nome do contato novamente
              if(!retornar_menu_principal(parametro_apagar)){
                 return; 
@@ -435,7 +435,7 @@ void apagar_contato(vector<Contato> &agenda)
 
         while (!validar_telefone(parametro_apagar)) // valida o telefone
         {
-            cout << "Telefone inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Telefone inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_apagar); // pega o telefone do contato novamente
              if(!retornar_menu_principal(parametro_apagar)){
                 return; 
@@ -450,7 +450,7 @@ void apagar_contato(vector<Contato> &agenda)
 
         while (!validar_email(parametro_apagar)) // valida o email
          {
-            cout << "Email inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Email inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_apagar); // pega o email do contato novamente
              if(!retornar_menu_principal(parametro_apagar)){
                 return; 
@@ -503,7 +503,7 @@ void editar_contato(vector<Contato> &agenda)
 
         while (!validar_nome(parametro_editar))
         {
-            cout << "Nome inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Nome inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_editar); // pega o nome do contato novamente
              if(!retornar_menu_principal(parametro_editar)){
                 return; 
@@ -523,7 +523,7 @@ void editar_contato(vector<Contato> &agenda)
             {
                 while (!validar_nome(parametro_editar))
                 {
-                  cout << "Nome inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+                  cout << "Nome inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
                   getline(cin, parametro_editar); // pega o nome do contato novamente
                   if(!retornar_menu_principal(parametro_editar)){
                       return; 
@@ -541,7 +541,7 @@ void editar_contato(vector<Contato> &agenda)
 
         while (!validar_telefone(parametro_editar)) // valida o telefone
        {
-            cout << "Telefone inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Telefone inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_editar); // pega o telefone do contato novamente
              if(!retornar_menu_principal(parametro_editar)){
                 return; 
@@ -561,7 +561,7 @@ void editar_contato(vector<Contato> &agenda)
             {
                 while (!validar_telefone(parametro_editar)) // valida o telefone
                 {
-                    cout << "Telefone inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+                    cout << "Telefone inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
                     getline(cin, parametro_editar); // pega o telefone do contato novamente
                     if(!retornar_menu_principal(parametro_editar)){
                         return; 
@@ -578,7 +578,7 @@ void editar_contato(vector<Contato> &agenda)
 
         while (!validar_email(parametro_editar))
         {
-            cout << "Email inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+            cout << "Email inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
             getline(cin, parametro_editar); // pega o email do contato novamente
              if(!retornar_menu_principal(parametro_editar)){
                 return; 
@@ -598,7 +598,7 @@ void editar_contato(vector<Contato> &agenda)
             {
                 while (!validar_email(parametro_editar)) // valida o email
                 {
-                      cout << "Email inválido. Tente novamente. \nOu insira \"menu\" para retornar ao menu principal\n";
+                      cout << "Email inválido. Tente novamente ou insira \"menu\" para retornar ao menu principal.\n";
                       getline(cin, parametro_editar); // pega o email do contato novamente
                       if(!retornar_menu_principal(parametro_editar)){
                           return; 
