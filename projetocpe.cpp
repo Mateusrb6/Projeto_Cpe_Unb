@@ -109,14 +109,14 @@ void imprimir_menu()
 {
     // imprime opções para o usuário escolher o que quer fazer
     cout <<"\n--------- Agenda de contatos --------- \n\n"
-         << "Funcoes: \n"
+         << "Funções: \n"
          << "(1) Consultar contatos adicionados \n"
          << "(2) Adicionar contato \n"
          << "(3) Apagar contato \n"
          << "(4) Editar contatos \n"
          << "(5) Mostrar contatos\n"
          << "(6) Encerrar \n\n"
-         << "Selecione uma das opcoes acima. \n\n";
+         << "Selecione uma das opções acima. \n\n";
 }
 
 int selecionar_opcao()
@@ -163,7 +163,7 @@ string primeira_letra_maiuscula(const string& str){
 // Imprime os dados do contato
 void mostrar_contato(int i, const Contato &contato)
 {
-    cout << "\tContato numero " << i << " :" << '\n'
+    cout << "\tContato número " << i << " :" << '\n'
          << "Nome: " << primeira_letra_maiuscula(contato.nome) << '\n'
          << "Email: " << contato.email << '\n'
          << "Telefone: " << contato.telefone << '\n';
@@ -204,7 +204,7 @@ void mostrar_contato_csv(const string &agendaContatos)
         vector<string> campos = split(linha, ','); // separa os campos da linha com a virgula
         if (campos.size() != 3) // se a linha não tiver 3 campos (nome, telefone e email) exibe mensagem de erro
         {
-            cerr << "Linha invalida no arquivo" << endl;
+            cerr << "Linha inválida no arquivo" << endl;
             continue; // pula para a proxima linha
         }
 
@@ -263,7 +263,7 @@ void consultar_contato(const vector<Contato> &agenda)
     }
 
     // usar qualquer uma das informações dentre nome, telefone ou email para achar um contato
-    cout << "\nEscolha uma das opções de consulta: \n(1) Nome\n(2) Telefone\n(3) Email." << endl;
+    cout << "\nEscolha uma das opções de consulta: \n(1) Nome\n(2) Telefone\n(3) Email.\n" << endl;
     int opcao_consulta = selecionar_opcao();
 
     string parametro_consulta;
@@ -285,7 +285,7 @@ void consultar_contato(const vector<Contato> &agenda)
         busca = busca_contato(parametro_consulta, agenda); // busca o contato na agenda
         break;
     case 2:
-        cout << "Digite o telefone do contato(formato 9XXXX-XXXX): " << endl;
+        cout << "Digite o telefone do contato (formato 9XXXX-XXXX): " << endl;
 
         getline(cin, parametro_consulta); // pega o telefone do contato
 
@@ -458,7 +458,7 @@ void editar_contato(vector<Contato> &agenda)
         return; // se a agenda estiver vazia, a função é encerrada
     }
 
-    cout << "\nEscolha uma das opções para editar o contato: \n1) Nome\n2) Telefone\n3) Email." << endl;
+    cout << "\nEscolha uma das opções para editar o contato: \n1) Nome\n2) Telefone\n3) Email.\n" << endl;
     int opcao_editar = selecionar_opcao();
 
     string parametro_editar; // nome, telefone ou email do contato existente que deseja editar
