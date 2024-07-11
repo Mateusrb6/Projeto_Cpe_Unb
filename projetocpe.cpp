@@ -623,7 +623,10 @@ void editar_contato(vector<Contato> &agenda)
     {
         cout << "Contato não encontrado." << endl;
     }
-    if(!retornar_menu_principal("\nDeseja voltar ao menu principal ? (s/n):")){
+    cout << "\nDeseja voltar ao menu principal ? (s/n):\n";
+    string retornar_menu;
+    getline(cin,retornar_menu); 
+    if(!retornar_menu_principal(retornar_menu)){
         editar_contato(agenda);
     }
 
